@@ -1,0 +1,105 @@
+<!doctype html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="theme-color" content="#f7f5ef">
+	<meta name="description" content="Atelier Nova imagine des identités visuelles et des expériences numériques qui ont du sens.">
+	<title>Atelier Nova — Des idées qui prennent vie</title>
+	<style>
+		:root{--ink:#20251f;--muted:#666d64;--paper:#f7f5ef;--green:#c9f267;--line:#deded5;--serif:Georgia,'Times New Roman',serif}
+		*{box-sizing:border-box}
+		html{scroll-behavior:smooth}
+		body{margin:0;background:var(--paper);color:var(--ink);font-family:Arial,Helvetica,sans-serif;-webkit-font-smoothing:antialiased}
+		a{color:inherit;text-decoration:none}
+		.wrap{width:min(1160px,calc(100% - 48px));margin:auto}
+		header{height:82px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}
+		.logo{display:flex;align-items:center;gap:10px;font-size:18px;font-weight:800;letter-spacing:-.7px}
+		.mark{width:28px;height:28px;border-radius:50% 50% 50% 8px;background:var(--green);display:grid;place-items:center;font-size:15px}
+		nav{display:flex;gap:34px;align-items:center;font-size:13px;color:#454a43}
+		nav a:hover,.text-link:hover{opacity:.65}
+		.nav-cta{padding:12px 18px;border:1px solid var(--ink);border-radius:30px;font-weight:700;color:var(--ink)}
+		.hero{min-height:610px;display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:48px;padding:65px 0 78px}
+		.eyebrow{display:flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:1.5px;font-size:10px;font-weight:700;color:var(--muted)}
+		.dot{width:7px;height:7px;background:#78a932;border-radius:50%}
+		h1{font-size:clamp(56px,7.4vw,98px);line-height:.96;letter-spacing:-6px;margin:26px 0 23px;font-weight:600}
+		h1 em{font-family:var(--serif);font-weight:400;letter-spacing:-5px}
+		.intro{font-size:16px;line-height:1.75;color:var(--muted);max-width:440px;margin:0 0 30px}
+		.actions{display:flex;align-items:center;gap:25px}
+		.button{display:inline-flex;align-items:center;gap:12px;padding:15px 21px;background:var(--ink);color:white;border-radius:30px;font-size:13px;font-weight:700;transition:transform .2s}
+		.button:hover{transform:translateY(-2px)}
+		.button span{font-size:18px;line-height:10px}
+		.text-link{font-size:13px;font-weight:700}
+		.visual{position:relative;height:440px;border-radius:48% 48% 12px 12px;background:#e6e9dc;overflow:hidden;isolation:isolate}
+		.visual:before{content:"";position:absolute;width:360px;height:360px;border-radius:50%;background:#d0e3a5;right:-58px;top:-105px;z-index:-1}
+		.sun{position:absolute;width:94px;height:94px;background:#f4b866;border-radius:50%;top:66px;left:74px}
+		.shape{position:absolute;width:190px;height:255px;left:50%;top:54%;transform:translate(-50%,-50%);background:#71856a;border-radius:48% 48% 8px 8px;box-shadow:32px 30px 0 #a7b58b}
+		.shape:before{content:"";position:absolute;width:82px;height:82px;border-radius:50%;background:#d8ad87;top:-51px;left:54px}
+		.shape:after{content:"";position:absolute;width:20px;height:170px;background:#f7f5ef;border-radius:20px;left:86px;top:70px;transform:rotate(25deg);opacity:.88}
+		.leaf{position:absolute;width:110px;height:48px;background:#849a67;border-radius:100% 0 100% 0;bottom:61px;left:28px;transform:rotate(-22deg)}
+		.leaf.two{left:auto;right:28px;bottom:104px;transform:rotate(35deg);background:#a0b27a}
+		.caption{position:absolute;bottom:20px;left:22px;font-size:10px;letter-spacing:1px;text-transform:uppercase;color:#50584a}
+		.note{position:absolute;right:-12px;bottom:45px;width:112px;height:112px;border-radius:50%;background:var(--green);display:grid;place-items:center;text-align:center;font-family:var(--serif);font-size:16px;line-height:1.1;transform:rotate(9deg)}
+		.strip{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px 0;display:flex;justify-content:space-between;align-items:center;color:var(--muted);font-size:11px;letter-spacing:.7px;text-transform:uppercase}
+		.strip strong{color:var(--ink);font-size:13px;letter-spacing:0;text-transform:none}
+		.services{padding:104px 0 110px}
+		.section-head{display:flex;justify-content:space-between;align-items:end;margin-bottom:38px}
+		h2{font-size:clamp(38px,5vw,60px);line-height:1;letter-spacing:-3px;font-weight:500;margin:16px 0 0}
+		.section-head p{max-width:280px;color:var(--muted);font-size:13px;line-height:1.7;margin:0 0 4px}
+		.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+		.card{border:1px solid var(--line);border-radius:8px;padding:27px 25px 24px;min-height:200px;transition:background .2s,transform .2s}
+		.card:hover{background:#fff;transform:translateY(-3px)}
+		.card-num{font-size:11px;color:#7b8277}
+		.card h3{font-family:var(--serif);font-weight:400;font-size:26px;margin:34px 0 9px}
+		.card p{font-size:12px;line-height:1.7;color:var(--muted);margin:0}
+		footer{background:var(--ink);color:#f7f5ef;padding:55px 0 25px}
+		.footer-top{display:flex;justify-content:space-between;align-items:center;padding-bottom:45px}
+		footer h2{font-family:var(--serif);font-size:clamp(36px,5vw,58px);max-width:570px;letter-spacing:-2px}
+		.footer-bottom{border-top:1px solid #454a43;padding-top:18px;display:flex;justify-content:space-between;color:#aeb2a9;font-size:11px}
+		.footer-bottom a{color:#fff}
+		@media(max-width:760px){.wrap{width:min(100% - 36px,560px)}header{height:70px}nav{gap:17px}nav a:not(.nav-cta){display:none}.hero{grid-template-columns:1fr;gap:40px;padding:62px 0 58px}h1{letter-spacing:-4px}.visual{height:370px;width:min(100%,450px);margin:auto}.strip{gap:15px;flex-wrap:wrap}.strip span:nth-of-type(2){display:none}.services{padding:76px 0}.section-head{display:block}.section-head p{margin-top:20px}.cards{grid-template-columns:1fr}.card{min-height:175px}.card h3{margin-top:23px}.footer-top{align-items:flex-start;gap:28px;flex-direction:column}.footer-bottom{gap:12px;flex-wrap:wrap}}
+		@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+	</style>
+</head>
+<body>
+	<div class="wrap">
+		<header>
+			<a class="logo" href="#accueil" aria-label="Atelier Nova, accueil"><span class="mark">✳</span> atelier nova</a>
+			<nav aria-label="Navigation principale">
+				<a href="#approche">Notre approche</a>
+				<a href="#services">Expertises</a>
+				<a class="nav-cta" href="mailto:bonjour@ateliernova.fr">Parlons de votre projet ↗</a>
+			</nav>
+		</header>
+		<main>
+			<section class="hero" id="accueil">
+				<div>
+					<div class="eyebrow"><span class="dot"></span> Studio créatif indépendant · Paris & partout</div>
+					<h1>Des idées<br>qui prennent<br><em>vie.</em></h1>
+					<p class="intro">Nous aidons les marques ambitieuses à trouver leur juste place, avec une stratégie claire et une créativité qui fait la différence.</p>
+					<div class="actions"><a class="button" href="mailto:bonjour@ateliernova.fr">Donner vie à une idée <span>↗</span></a><a class="text-link" href="#services">Découvrir le studio ↓</a></div>
+				</div>
+				<div class="visual" role="img" aria-label="Illustration abstraite aux couleurs naturelles">
+					<span class="sun"></span><span class="leaf"></span><span class="leaf two"></span><span class="shape"></span>
+					<span class="caption">Créer avec intention — depuis 2018</span><span class="note">Curieux<br>par nature</span>
+				</div>
+			</section>
+			<div class="strip" id="approche"><strong>Petit studio, grandes idées.</strong><span>Stratégie</span><span>Identité</span><span>Digital</span><span>Des projets faits pour durer</span></div>
+			<section class="services" id="services">
+				<div class="section-head"><div><div class="eyebrow"><span class="dot"></span> Ce qu’on imagine ensemble</div><h2>Du sens. Du beau.<br>Du concret.</h2></div><p>De la première question à la dernière finition, nous faisons équipe avec vous à chaque étape.</p></div>
+				<div class="cards">
+					<article class="card"><span class="card-num">01 / Comprendre</span><h3>Stratégie de marque</h3><p>Positionnement, plateforme de marque et direction créative pour savoir où aller — et pourquoi.</p></article>
+					<article class="card"><span class="card-num">02 / Exprimer</span><h3>Identité visuelle</h3><p>Des univers singuliers et cohérents, pensés pour raconter votre histoire partout où elle compte.</p></article>
+					<article class="card"><span class="card-num">03 / Connecter</span><h3>Expérience digitale</h3><p>Des sites utiles, accessibles et agréables à parcourir, conçus autour des gens qui les utilisent.</p></article>
+				</div>
+			</section>
+		</main>
+	</div>
+	<footer>
+		<div class="wrap">
+			<div class="footer-top"><div><div class="eyebrow"><span class="dot"></span> On commence quand ?</div><h2>Une bonne idée mérite une belle histoire.</h2></div><a class="button" href="mailto:bonjour@ateliernova.fr">bonjour@ateliernova.fr <span>↗</span></a></div>
+			<div class="footer-bottom"><span>© 2025 Atelier Nova · Fait avec intention.</span><span>Indépendant, curieux & <a href="#accueil">toujours en mouvement ↑</a></span></div>
+		</div>
+	</footer>
+</body>
+</html>
